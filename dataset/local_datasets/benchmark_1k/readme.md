@@ -1,3 +1,17 @@
+---
+language: en
+license: mit
+task_categories:
+- text-generation
+- summarization
+tags:
+- llm
+- benchmark
+- 1k-tokens
+- generated
+- synthetic
+---
+
 # Benchmark 1K Dataset
 
 A curated dataset of 1,000 high-quality prompts designed for benchmarking Large Language Model (LLM) performance across various metrics including latency, throughput, and response quality.
