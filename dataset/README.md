@@ -232,63 +232,6 @@ for dataset in benchmark_1k benchmark_8k benchmark_16k; do
 done
 ```
 
-## Using Generated Datasets
-
-### With FastAPI Benchmark Tool
-
-```bash
-# Test with 1K dataset
-curl -X POST "http://localhost:8000/run-load-test" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user": 100,
-    "spawnrate": 100,
-    "model": "your-model-name",
-    "url": "https://your-llm-endpoint.com",
-    "duration": 60,
-    "dataset": "username/benchmark_1k"
-  }'
-
-# Test with 8K dataset
-curl -X POST "http://localhost:8000/run-load-test" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user": 50,
-    "spawnrate": 50,
-    "model": "your-model-name", 
-    "url": "https://your-llm-endpoint.com",
-    "duration": 60,
-    "dataset": "username/benchmark_8k"
-  }'
-
-# Test with 16K dataset
-curl -X POST "http://localhost:8000/run-load-test" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user": 25,
-    "spawnrate": 25,
-    "model": "your-model-name",
-    "url": "https://your-llm-endpoint.com", 
-    "duration": 60,
-    "dataset": "username/benchmark_16k"
-  }'
-```
-
-### With Python
-
-```python
-from datasets import load_dataset
-
-# Load datasets
-dataset_1k = load_dataset("username/benchmark_1k")
-dataset_8k = load_dataset("username/benchmark_8k")
-dataset_16k = load_dataset("username/benchmark_16k")
-
-# Access data
-for sample in dataset_1k["train"]:
-    print(f"Text: {sample['text'][:100]}...")
-    print(f"Token Length: {sample['token_length']}")
-```
 
 ## Customization
 
