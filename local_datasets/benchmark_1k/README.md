@@ -18,9 +18,9 @@ A curated dataset of 1,000 high-quality prompts designed for benchmarking Large 
 
 ## Dataset Overview
 
-- **Size**: 1,000 prompts
+- **Size**: 100 prompts
 - **Format**: JSONL (JSON Lines)
-- **Average Token Length**: ~1,000 tokens per prompt
+- **Average Token Length**: Variable (computed from actual data; see Stats)
 - **Purpose**: LLM benchmarking and performance testing
 - **Domain**: General knowledge, historical content, and analytical writing
 
@@ -30,15 +30,13 @@ Each line in the dataset contains a JSON object with the following structure:
 
 ```json
 {
-  "prompt": "Write a detailed history of the Roman Empire...",
-  "token_length": 1000
+  "prompt": "Write a detailed history of the Roman Empire..."
 }
 ```
 
 ### Fields
 
 - **`prompt`**: The input text prompt for the LLM
-- **`token_length`**: Approximate token count of the prompt (useful for token-based analysis)
 
 ## Content Characteristics
 
@@ -105,11 +103,14 @@ When used with the benchmark tool, this dataset enables collection of:
 
 ## File Information
 
-- **Filename**: `data.jsonl`
+- **Filename**: `train.jsonl`
 - **Encoding**: UTF-8
-- **Line Count**: 1,000
-- **Total Size**: ~1.2MB
+- **Line Count**: 100
 - **Compression**: Uncompressed for easy processing
+
+## Stats
+
+- The average and distribution of prompt lengths are data-driven and may change as the dataset evolves. To compute current statistics locally, run a simple script to scan `train.jsonl` and measure lengths (words or tokens) as needed.
 
 ## License
 

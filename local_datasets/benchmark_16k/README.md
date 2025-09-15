@@ -15,13 +15,13 @@ tags:
 
 # Benchmark 16K Dataset
 
-A curated dataset of 1,000 high-quality prompts designed for benchmarking Large Language Model (LLM) performance across various metrics including latency, throughput, and response quality. This dataset features very long, complex prompts ideal for testing models' capabilities with extended context, creative writing, and detailed narrative generation.
+A curated dataset of 100 high-quality prompts designed for benchmarking Large Language Model (LLM) performance across various metrics including latency, throughput, and response quality. This dataset features very long, complex prompts ideal for testing models' capabilities with extended context, creative writing, and detailed narrative generation.
 
 ## Dataset Overview
 
-- **Size**: 1,000 prompts
+- **Size**: 100 prompts
 - **Format**: JSONL (JSON Lines)
-- **Average Token Length**: ~16,000 tokens per prompt
+- **Average Token Length**: Variable (very long-form; computed from actual data)
 - **Purpose**: LLM benchmarking and performance testing with maximum context length
 - **Domain**: Creative writing, storytelling, detailed narratives, and complex multi-scenario content
 
@@ -31,15 +31,13 @@ Each line in the dataset contains a JSON object with the following structure:
 
 ```json
 {
-  "prompt": "Draft a lengthy fictional story about a journey through a fantastical world...",
-  "token_length": 16000
+  "prompt": "Draft a lengthy fictional story about a journey through a fantastical world..."
 }
 ```
 
 ### Fields
 
 - **`prompt`**: The input text prompt for the LLM
-- **`token_length`**: Approximate token count of the prompt (useful for token-based analysis)
 
 ## Content Characteristics
 
@@ -116,11 +114,14 @@ When used with the benchmark tool, this dataset enables collection of:
 
 ## File Information
 
-- **Filename**: `data.jsonl`
+- **Filename**: `train.jsonl`
 - **Encoding**: UTF-8
-- **Line Count**: 1,000
-- **Total Size**: ~19.2MB
+- **Line Count**: 100
 - **Compression**: Uncompressed for easy processing
+
+## Stats
+
+- Prompt length is data-driven and may vary significantly across entries. Compute current averages locally by scanning `train.jsonl`.
 
 ## Use Cases
 
