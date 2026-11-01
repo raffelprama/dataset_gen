@@ -14,9 +14,7 @@ load_dotenv()
 # --- Configuration Section ---
 HF_USERNAME = "raffel36"
 TOKENIZER_NAME = "Qwen/Qwen2.5-VL-7B-Instruct" 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-if not OPENAI_API_KEY:
-    raise RuntimeError("OPENAI_API_KEY is not set. Copy .env.example to .env and fill it in.")
+OPENAI_API_KEY="sk-G1_wkZ37sEmY4eqnGdcNig"
 try:
     tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_NAME)
 except Exception as e:
@@ -28,6 +26,7 @@ logger = logging.getLogger(__name__)
 
 api_key = OPENAI_API_KEY
 print(os.getenv("OPENAI_API_URL"))
+print(api_key)
 
 client = OpenAI(
     base_url=os.getenv("OPENAI_API_URL"),
